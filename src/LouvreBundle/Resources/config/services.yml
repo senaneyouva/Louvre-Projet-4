@@ -1,0 +1,34 @@
+services:
+#    louvre.example:
+#        class: LouvreBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    louvre.commandeserial:
+        class: LouvreBundle\InfosCommande\CommandeSerial
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    louvre.ticketprice:
+        class: LouvreBundle\InfosCommande\TicketPrice
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    louvre.commandetotalprice:
+        class: LouvreBundle\InfosCommande\CommandeTotalPrice
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    louvre.commandestripecharge:
+        class: LouvreBundle\InfosCommande\CommandeStripeCharge
+        arguments: ['%stripekey%']
+
+    louvre.daysoff:
+        class: LouvreBundle\InfosCommande\DaysOff
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - ['%limit_billets_days%']
+
+    louvre.commandemail:
+        class: LouvreBundle\InfosCommande\CommandeMail
+        arguments:
+           - "@mailer"
+           - "@templating"
