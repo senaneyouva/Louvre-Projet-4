@@ -1,0 +1,21 @@
+{%  extends "LouvreBundle:home:index.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+    location.href = history.back(-1);
+        $(document).ready(function() {
+            $('.interieur').removeClass('interieur');
+            $('.corps').css('display','block');
+            $('.row .corps').addClass('col-lg-offset-1');
+        });
+
+    </script>
+{% endblock %}

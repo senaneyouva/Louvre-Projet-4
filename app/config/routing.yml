@@ -1,0 +1,4 @@
+louvre:
+    resource: "@LouvreBundle/Controller/"
+    type:     annotation
+    prefix:   /
